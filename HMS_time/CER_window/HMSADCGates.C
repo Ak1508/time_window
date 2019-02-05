@@ -56,21 +56,18 @@ void HMSADCGates::SlaveBegin(TTree * /*tree*/)
 
     h1PHGCERPulseTime[ipmt] = new TH1F(Form("PHGCERPulseTime%d",ipmt+1),"",1000,-300,200);
     
-    h1PHGCERPulseTimeVsPulseAmp[ipmt] = new TH2F(Form("PHGCERPulseTimeVsPulseAmp%d",ipmt+1),"",1000,-300,200, 1000, 0, 1000);
-    
-    h1PHGCERPulseTimeVsPulseAmpMultCut[ipmt] = new TH2F(Form("PHGCERPulseTimeVsPulseAmpMultCut%d",ipmt+1),"",1000,-300,200, 1000, 0, 1000);
-    
+    //********************************************NO hit Selectin********************************************//
     h1PHGCERPulseTimeStarttimeDiff[ipmt] = new TH1F(Form("PHGCERPulseTimeStarttimeDiff%d",ipmt+1),"",1000,-300,200);
-    
+
     h1PHGCERPulseTimeStarttimeDiffMult[ipmt] = new TH1F(Form("PHGCERPulseTimeStarttimeDiffMult%d",ipmt+1),"",1000,-300,200);
-    
+
     h1PHGCERPulseTimeStarttimeDiffMultCut[ipmt] = new TH1F(Form("PHGCERPulseTimeStarttimeDiffMultCut%d",ipmt+1),"",1000,-300,200);
-    
+
     h1PHGCERPulseTimeStarttimeDiff_CalCut[ipmt] = new TH1F(Form("PHGCERPulseTimeStarttimeDiff_CalCut%d",ipmt+1),"",1000,-300,200);
-
-    h1PHGCERPGoodAdcTdcDiffTime[ipmt] = new TH1F(Form("PHGCERGoodAdcTdcDiffTime%d",ipmt+1),"", 1000, -300, 200);
-
-    h1PHGCERPGoodAdcTdcDiffTime_Mult[ipmt] = new TH1F(Form("PHGCERGoodAdcTdcDiffTimeMult%d",ipmt+1), "", 1000, -300, 200);
+    
+    //***********************************Amplitude plot NO hit Selection ******************************************************//
+    
+    h1PHGCERPulseTimeVsPulseAmp[ipmt] = new TH2F(Form("PHGCERPulseTimeVsPulseAmp%d",ipmt+1),"",1000,-300,200, 1000, 0, 1000);
 
     h1TimeVsAmpMult[ipmt] = new TH2F(Form("h1TimeVsAmpMult%d",ipmt+1), "" , 1000, -300, 200, 1000, 0, 1000);
 
@@ -78,11 +75,23 @@ void HMSADCGates::SlaveBegin(TTree * /*tree*/)
 
     h1TimeVsAmpMultCal[ipmt] = new TH2F(Form("h1TimeVsAmpMultCal%d",ipmt+1), "" , 1000, -300, 200, 1000, 0, 1000);
 
-    h1goodTimeVsAmpMult[ipmt]= new TH2F(Form("h1goodTimeVsAmpMult%d",ipmt+1), "" , 1000, -300, 200, 1000, 0, 1000);
+    //**********************************************Hit selection********************************************//
+  
+    h1PHGCERPGoodAdcTdcDiffTime[ipmt] = new TH1F(Form("PHGCERGoodAdcTdcDiffTime%d",ipmt+1),"", 1000, -300, 200);
+
+    h1PHGCERPGoodAdcTdcDiffTime_Mult[ipmt] = new TH1F(Form("PHGCERGoodAdcTdcDiffTimeMult%d",ipmt+1), "", 1000, -300, 200);
 
     h1goodTimeCal[ipmt] = new TH1F (Form("h1goodTimecal%d", ipmt+1),"",1000,-300,200);
     
     h1goodTimeMultCal[ipmt] = new TH1F (Form("h1goodTimeMultCal%d", ipmt+1),"",1000,-300,200);
+
+     //***********************************Amplitude plot Hit  Selection ******************************************************//
+
+    h1PHGCERPulseTimeVsPulseAmpMultCut[ipmt] = new TH2F(Form("PHGCERPulseTimeVsPulseAmpMultCut%d",ipmt+1),"",1000,-300,200, 1000, 0, 1000);
+    
+    h1goodTimeVsAmpMult[ipmt]= new TH2F(Form("h1goodTimeVsAmpMult%d",ipmt+1), "" , 1000, -300, 200, 1000, 0, 1000);
+
+    
     
   }
 }
@@ -310,7 +319,7 @@ void HMSADCGates::Terminate()
     legend[ipmtt]->Draw();
     // delete legend[ipmtt];
     
-    c1->SaveAs(Form("wide_CER_pmt_%i.pdf", ipmt+1));
+    c1->SaveAs(Form("Plots/wide_CER_pmt_%i.pdf", ipmt+1));
     
     delete c1;
     for(int ii=0;ii<8;ii++)
