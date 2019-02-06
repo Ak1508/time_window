@@ -27,7 +27,7 @@ void HMSADCGates::SlaveBegin(TTree * /*tree*/)
 
   h1PHGCERPulseTimeStarttimeDiff_CalCut = new TH1F*[13];
   
-  //****************** HgCer( 4 pmts) **********************************//
+  // ************************* histograms pointer **************************//
   h1PHGCERPulseTime              = new TH1F*[13];
   h1PHGCERPulseTimeStarttimeDiff = new TH1F*[13];
   h1PHGCERPGoodAdcTdcDiffTime = new TH1F*[13];
