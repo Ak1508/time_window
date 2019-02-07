@@ -1,0 +1,8 @@
+# dont include pdf files
+
+*.pdf
+*.png
+*.eps
+*.ps
+*.C~
+*.py~

@@ -14,29 +14,33 @@ public :
    TTreeReader     fReader;  //!the tree reader
    TTree *fChain = 0; 
 
-   //TH1F          **h1HCERPulseTimeStarttimeDiff;
+   //*********** no hit selection *************************//
+
    TH1F          **h1PHGCERPulseTime;
-   TH1F          **h1PHGCERPulseTimeStarttimeDiff;
-   TH1F          **h1PHGCERPulseTimeStarttimeDiffMult;
-   TH1F          **h1PHGCERPulseTimeStarttimeDiffMultCut;
-   TH2F          **h1PHGCERPulseTimeVsPulseAmpMultCut;
+   TH1F          **h1PHGCERPulseTimeStarttimeDiff; // no hit selection AdcTdc 
+   TH1F          **h1PHGCERPulseTimeStarttimeDiffMult; // no hit selction with mult Cut
+   TH1F          **h1PHGCERPulseTimeStarttimeDiffMultCut; // no hit selection with mult and cal
+   TH1F          **h1_delta; // no hit selction with delta cut 
+   TH1F          **h1PHGCERPulseTimeStarttimeDiff_CalCut; // no hit selection with Calorimeter cut
 
-   TH1F          **h1goodTimeCal;
-   TH1F          **h1goodTimeMultCal;
+   //******//********//*********Amplitude plot*********//**************//*********//
 
+   TH2F          **h1PHGCERPulseTimeVsPulseAmp;
    TH2F          **h1TimeVsAmpMult;
    TH2F          **h1TimeVsAmpCal;
    TH2F          **h1TimeVsAmpMultCal;
-   TH2F          **h1goodTimeVsAmpMult;
 
-   TH1F          **h1PHGCERPulseTimeStarttimeDiff_CalCut;
+   //*********************************Hit Selection *******************************//
    TH1F          **h1PHGCERPGoodAdcTdcDiffTime;
+   TH1F          **h1_gooddelta;
    TH1F          **h1PHGCERPGoodAdcTdcDiffTime_Mult;
-   
-   TH2F          **h1PHGCERPulseTimeVsPulseAmp;
+   TH1F          **h1goodTimeCal;
+   TH1F          **h1goodTimeMultCal;
 
-   // TH2F         **h1PNGCERPulseTimeVsPulseAmp;
+   //**********************************Amplitude plot *************************//
 
+   TH2F          **h1PHGCERPulseTimeVsPulseAmpMultCut;
+   TH2F          **h1goodTimeVsAmpMult;
 
 // Readers to access the data (delete the ones you do not need).
    TTreeReaderValue<Int_t> Ndata_H_cal_1pr_goodNegAdcMult = {fReader, "Ndata.H.cal.1pr.goodNegAdcMult"};
@@ -167,9 +171,10 @@ public :
    TTreeReaderArray<Double_t> H_cer_goodAdcTdcDiffTime = {fReader, "H.cer.goodAdcTdcDiffTime"};
    TTreeReaderValue<Double_t> H_cer_npeSum = {fReader, "H.cer.npeSum"};
    TTreeReaderValue<Double_t> H_hod_starttime = {fReader, "H.hod.starttime"};
-
-
-   HMSADCGates(TTree * /*tree*/ =0) {h1PHGCERPulseTimeVsPulseAmp=0,h1PHGCERPGoodAdcTdcDiffTime_Mult =0,h1PHGCERPGoodAdcTdcDiffTime =0,h1PHGCERPulseTimeStarttimeDiff=0,h1goodTimeVsAmpMult=0,h1TimeVsAmpMultCal=0, h1TimeVsAmpCal=0,h1TimeVsAmpMult=0,h1goodTimeMultCal =0,h1goodTimeCal =0,h1PHGCERPulseTimeVsPulseAmpMultCut =0,h1PHGCERPulseTimeStarttimeDiffMultCut =0,h1PHGCERPulseTimeStarttimeDiffMult=0,h1PHGCERPulseTimeStarttimeDiff=0,h1PHGCERPulseTime=0;}
+   TTreeReaderValue<Double_t> H_gtr_dp = {fReader, "H.gtr.dp"};
+   TTreeReaderValue<Double_t> H_cal_etottracknorm = {fReader, "H.cal.etottracknorm"};
+  
+   HMSADCGates(TTree * /*tree*/ =0) {h1_delta=0,h1_gooddelta=0,h1PHGCERPulseTimeVsPulseAmp=0,h1PHGCERPGoodAdcTdcDiffTime_Mult =0,h1PHGCERPGoodAdcTdcDiffTime =0,h1PHGCERPulseTimeStarttimeDiff=0,h1goodTimeVsAmpMult=0,h1TimeVsAmpMultCal=0, h1TimeVsAmpCal=0,h1TimeVsAmpMult=0,h1goodTimeMultCal =0,h1goodTimeCal =0,h1PHGCERPulseTimeVsPulseAmpMultCut =0,h1PHGCERPulseTimeStarttimeDiffMultCut =0,h1PHGCERPulseTimeStarttimeDiffMult=0,h1PHGCERPulseTimeStarttimeDiff=0,h1PHGCERPulseTime=0;}
    virtual ~HMSADCGates() { }
    virtual Int_t   Version() const { return 2; }
    virtual void    Begin(TTree *tree);
