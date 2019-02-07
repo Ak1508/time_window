@@ -54,42 +54,42 @@ void HMSADCGates::SlaveBegin(TTree * /*tree*/)
   
   for (Int_t ipmt=0; ipmt<4; ipmt++) {
 
-    h1PHGCERPulseTime[ipmt] = new TH1F(Form("PHGCERPulseTime%d",ipmt+1),"",1000,-300,200);
+    h1PHGCERPulseTime[ipmt] = new TH1F(Form("PHGCERPulseTime%d",ipmt+1),"",750, -150, 150);
     
     //********************************************NO hit Selectin********************************************//
-    h1PHGCERPulseTimeStarttimeDiff[ipmt] = new TH1F(Form("PHGCERPulseTimeStarttimeDiff%d",ipmt+1),"",1000,-300,200);
+    h1PHGCERPulseTimeStarttimeDiff[ipmt] = new TH1F(Form("PHGCERPulseTimeStarttimeDiff%d",ipmt+1),"",750, -150, 150);
 
-    h1PHGCERPulseTimeStarttimeDiffMult[ipmt] = new TH1F(Form("PHGCERPulseTimeStarttimeDiffMult%d",ipmt+1),"",1000,-300,200);
+    h1PHGCERPulseTimeStarttimeDiffMult[ipmt] = new TH1F(Form("PHGCERPulseTimeStarttimeDiffMult%d",ipmt+1),"",750, -150, 150);
 
-    h1PHGCERPulseTimeStarttimeDiffMultCut[ipmt] = new TH1F(Form("PHGCERPulseTimeStarttimeDiffMultCut%d",ipmt+1),"",1000,-300,200);
+    h1PHGCERPulseTimeStarttimeDiffMultCut[ipmt] = new TH1F(Form("PHGCERPulseTimeStarttimeDiffMultCut%d",ipmt+1),"",750, -150, 150);
 
-    h1PHGCERPulseTimeStarttimeDiff_CalCut[ipmt] = new TH1F(Form("PHGCERPulseTimeStarttimeDiff_CalCut%d",ipmt+1),"",1000,-300,200);
+    h1PHGCERPulseTimeStarttimeDiff_CalCut[ipmt] = new TH1F(Form("PHGCERPulseTimeStarttimeDiff_CalCut%d",ipmt+1),"",750, -150, 150);
     
     //***********************************Amplitude plot NO hit Selection ******************************************************//
     
-    h1PHGCERPulseTimeVsPulseAmp[ipmt] = new TH2F(Form("PHGCERPulseTimeVsPulseAmp%d",ipmt+1),"",1000,-300,200, 1000, 0, 1000);
+    h1PHGCERPulseTimeVsPulseAmp[ipmt] = new TH2F(Form("PHGCERPulseTimeVsPulseAmp%d",ipmt+1),"",750, -150, 150, 620, -20, 600);
 
-    h1TimeVsAmpMult[ipmt] = new TH2F(Form("h1TimeVsAmpMult%d",ipmt+1), "" , 1000, -300, 200, 1000, 0, 1000);
+    h1TimeVsAmpMult[ipmt] = new TH2F(Form("h1TimeVsAmpMult%d",ipmt+1), "" , 750, -150, 150, 620, -20, 600);
 
-    h1TimeVsAmpCal[ipmt] = new TH2F(Form("h1TimeVsAmpCal%d",ipmt+1), "" , 1000, -300, 200, 1000, 0, 1000);
+    h1TimeVsAmpCal[ipmt] = new TH2F(Form("h1TimeVsAmpCal%d",ipmt+1), "" , 750, -150, 150, 620, -20, 600);
 
-    h1TimeVsAmpMultCal[ipmt] = new TH2F(Form("h1TimeVsAmpMultCal%d",ipmt+1), "" , 1000, -300, 200, 1000, 0, 1000);
+    h1TimeVsAmpMultCal[ipmt] = new TH2F(Form("h1TimeVsAmpMultCal%d",ipmt+1), "" , 750, -150, 150, 620, -20, 600);
 
     //**********************************************Hit selection********************************************//
   
-    h1PHGCERPGoodAdcTdcDiffTime[ipmt] = new TH1F(Form("PHGCERGoodAdcTdcDiffTime%d",ipmt+1),"", 1000, -300, 200);
+    h1PHGCERPGoodAdcTdcDiffTime[ipmt] = new TH1F(Form("PHGCERGoodAdcTdcDiffTime%d",ipmt+1),"", 500, 40, 160);
 
-    h1PHGCERPGoodAdcTdcDiffTime_Mult[ipmt] = new TH1F(Form("PHGCERGoodAdcTdcDiffTimeMult%d",ipmt+1), "", 1000, -300, 200);
+    h1PHGCERPGoodAdcTdcDiffTime_Mult[ipmt] = new TH1F(Form("PHGCERGoodAdcTdcDiffTimeMult%d",ipmt+1), "", 500, 40, 160);
 
-    h1goodTimeCal[ipmt] = new TH1F (Form("h1goodTimecal%d", ipmt+1),"",1000,-300,200);
+    h1goodTimeCal[ipmt] = new TH1F (Form("h1goodTimecal%d", ipmt+1),"",500, 40, 160);
     
-    h1goodTimeMultCal[ipmt] = new TH1F (Form("h1goodTimeMultCal%d", ipmt+1),"",1000,-300,200);
+    h1goodTimeMultCal[ipmt] = new TH1F (Form("h1goodTimeMultCal%d", ipmt+1),"", 500, 40, 160);
 
      //***********************************Amplitude plot Hit  Selection ******************************************************//
 
-    h1PHGCERPulseTimeVsPulseAmpMultCut[ipmt] = new TH2F(Form("PHGCERPulseTimeVsPulseAmpMultCut%d",ipmt+1),"",1000,-300,200, 1000, 0, 1000);
+    h1PHGCERPulseTimeVsPulseAmpMultCut[ipmt] = new TH2F(Form("PHGCERPulseTimeVsPulseAmpMultCut%d",ipmt+1),"",750, -150, 150, 620, -20, 600);
     
-    h1goodTimeVsAmpMult[ipmt]= new TH2F(Form("h1goodTimeVsAmpMult%d",ipmt+1), "" , 1000, -300, 200, 1000, 0, 1000);
+    h1goodTimeVsAmpMult[ipmt]= new TH2F(Form("h1goodTimeVsAmpMult%d",ipmt+1), "" , 750, -150, 150, 620, -20, 600);
 
     
     
@@ -204,7 +204,7 @@ void HMSADCGates::Terminate()
     h1PHGCERPulseTimeStarttimeDiffMultCut[ipmt]->Draw("same");
     h1PHGCERPulseTimeStarttimeDiffMultCut[ipmt]->SetLineColor(kRed-10); // electron and multiplicity cut
     h1PHGCERPulseTimeStarttimeDiffMultCut[ipmt]->SetLineStyle(2);
-    h1PHGCERPulseTimeStarttimeDiff[ipmt]->GetXaxis()->SetTitle("-P.hgcer.adcPulseTime + P.hod.starttime");
+    h1PHGCERPulseTimeStarttimeDiff[ipmt]->GetXaxis()->SetTitle("-H.cer.adcPulseTime + H.hod.starttime");
     h1PHGCERPulseTimeStarttimeDiff[ipmt]->GetYaxis()->SetTitle("Counts");
     
     legend[ipmtt]->AddEntry(h1PHGCERPulseTimeStarttimeDiff[ipmt],"no hit selection","l");
@@ -223,8 +223,8 @@ void HMSADCGates::Terminate()
     gPad->cd(1); // no hits selection
     ipmtt+=1;
     h1PHGCERPulseTimeVsPulseAmp[ipmt]->Draw("colz");gPad->SetLogz(1);
-    h1PHGCERPulseTimeVsPulseAmp[ipmt]->GetXaxis()->SetTitle("-P.hgcer.adcPulseTime + P.hod.starttime");
-    h1PHGCERPulseTimeVsPulseAmp[ipmt]->GetYaxis()->SetTitle("P.hgcer.adcPulseAmp");
+    h1PHGCERPulseTimeVsPulseAmp[ipmt]->GetXaxis()->SetTitle("-H.cer.adcPulseTime + H.hod.starttime");
+    h1PHGCERPulseTimeVsPulseAmp[ipmt]->GetYaxis()->SetTitle("H.cer.adcPulseAmp");
     h1PHGCERPulseTimeVsPulseAmp[ipmt]->GetYaxis()->SetTitleOffset(1.5);
     h1PHGCERPulseTimeVsPulseAmp[ipmt]->SetLineStyle(2);
     legend[ipmtt] = new TLegend(0.1,0.8,0.48,0.9);
@@ -235,8 +235,8 @@ void HMSADCGates::Terminate()
     c1->cd(2); gPad->cd(2); // multiplicity
     ipmtt+=1;
     h1TimeVsAmpMult[ipmt]->Draw("colz");gPad->SetLogz(1);
-    h1TimeVsAmpMult[ipmt ]->GetXaxis()->SetTitle("-P.hgcer.adcPulseTime + P.hod.starttime");
-    h1TimeVsAmpMult[ipmt ] ->GetYaxis()->SetTitle("P.hgcer.adcPulseAmp");
+    h1TimeVsAmpMult[ipmt ]->GetXaxis()->SetTitle("-H.cer.adcPulseTime + H.hod.starttime");
+    h1TimeVsAmpMult[ipmt ] ->GetYaxis()->SetTitle("H.cer.adcPulseAmp");
     h1TimeVsAmpMult[ipmt ] ->GetYaxis()->SetTitleOffset(1.5);
     legend[ipmtt] = new TLegend(0.1,0.8,0.48,0.9);
     legend[ipmtt]->AddEntry(h1PHGCERPulseTimeStarttimeDiffMult [ipmt ], "mult=1", "l");
@@ -246,8 +246,8 @@ void HMSADCGates::Terminate()
     c1->cd(2); gPad->cd(3); // Cal_Cut 
     ipmtt+=1;
     h1TimeVsAmpCal[ipmt]->Draw("colz");gPad->SetLogz(1);
-    h1TimeVsAmpCal[ipmt ]->GetXaxis()->SetTitle("-P.hgcer.adcPulseTime + P.hod.starttime");
-    h1TimeVsAmpCal[ipmt ] ->GetYaxis()->SetTitle("P.hgcer.adcPulseAmp");
+    h1TimeVsAmpCal[ipmt ]->GetXaxis()->SetTitle("-H.cer.adcPulseTime + H.hod.starttime");
+    h1TimeVsAmpCal[ipmt ] ->GetYaxis()->SetTitle("H.cer.adcPulseAmp");
     h1TimeVsAmpCal[ipmt ] ->GetYaxis()->SetTitleOffset(1.5);
     legend[ipmtt] = new TLegend(0.1,0.8,0.48,0.9);
     legend[ipmtt]->AddEntry(h1PHGCERPulseTimeStarttimeDiff_CalCut[ipmt],"Cer Cut","l");
@@ -257,8 +257,8 @@ void HMSADCGates::Terminate()
     c1->cd(2); gPad->cd(4); // multiplicity and cal cut
     ipmtt+=1;
     h1TimeVsAmpMultCal[ipmt]->Draw("colz");gPad->SetLogz(1);
-    h1TimeVsAmpMultCal[ipmt ]->GetXaxis()->SetTitle("-P.hgcer.adcPulseTime + P.hod.starttime");
-    h1TimeVsAmpMultCal[ipmt ] ->GetYaxis()->SetTitle("P.hgcer.adcPulseAmp");
+    h1TimeVsAmpMultCal[ipmt ]->GetXaxis()->SetTitle("-H.cer.adcPulseTime + H.hod.starttime");
+    h1TimeVsAmpMultCal[ipmt ] ->GetYaxis()->SetTitle("H.cer.adcPulseAmp");
     h1TimeVsAmpMultCal[ipmt ] ->GetYaxis()->SetTitleOffset(1.5);
     // cout<<"kera   2222"<<endl;
     legend[ipmtt] = new TLegend(0.1,0.8,0.48,0.9);
@@ -272,8 +272,8 @@ void HMSADCGates::Terminate()
     gPad->cd(1);
     ipmtt=ipmtt+1;
     h1PHGCERPulseTimeVsPulseAmpMultCut[ipmt]->Draw("colz");gPad->SetLogz(1);
-    h1PHGCERPulseTimeVsPulseAmpMultCut[ipmt]->GetXaxis()->SetTitle("P.hgcer.goodAdcTdcDiffTime");
-    h1PHGCERPulseTimeVsPulseAmpMultCut[ipmt]->GetYaxis()->SetTitle("P.hgcer.goodAdcPulseAmp");
+    h1PHGCERPulseTimeVsPulseAmpMultCut[ipmt]->GetXaxis()->SetTitle("H.cer.goodAdcTdcDiffTime");
+    h1PHGCERPulseTimeVsPulseAmpMultCut[ipmt]->GetYaxis()->SetTitle("H.cer.goodAdcPulseAmp");
     h1PHGCERPulseTimeVsPulseAmpMultCut[ipmt]->GetYaxis()->SetTitleOffset(1.5);
     legend[ipmtt] = new TLegend(0.12,0.8,0.48,0.89);
     legend[ipmtt]->AddEntry(h1PHGCERPGoodAdcTdcDiffTime[ipmt],"hit selection by hcana", "l");
@@ -287,8 +287,8 @@ void HMSADCGates::Terminate()
     c1->cd(4); gPad->cd(2);
     ipmtt=ipmtt+1;
     h1goodTimeVsAmpMult[ipmt]->Draw("colz");gPad->SetLogz(1);
-    h1goodTimeVsAmpMult[ipmt]->GetXaxis()->SetTitle("P.hgcer.goodAdcTdcDiffTime");
-    h1goodTimeVsAmpMult[ipmt]->GetYaxis()->SetTitle("P.hgcer.goodAdcPulseAmp");
+    h1goodTimeVsAmpMult[ipmt]->GetXaxis()->SetTitle("H.cer.goodAdcTdcDiffTime");
+    h1goodTimeVsAmpMult[ipmt]->GetYaxis()->SetTitle("H.cer.goodAdcPulseAmp");
     h1goodTimeVsAmpMult[ipmt]->GetYaxis()->SetTitleOffset(1.65);
     legend[ipmtt] = new TLegend(0.12,0.8,0.48,0.89);
     legend[ipmtt]->AddEntry(h1PHGCERPGoodAdcTdcDiffTime_Mult[ipmt],"good with mult == 1", "l");
@@ -302,7 +302,7 @@ void HMSADCGates::Terminate()
     h1PHGCERPGoodAdcTdcDiffTime_Mult[ipmt]->Draw("same");
     h1PHGCERPGoodAdcTdcDiffTime_Mult[ipmt]->SetLineColor(kBlue-7);
     h1PHGCERPGoodAdcTdcDiffTime_Mult[ipmt]->SetLineStyle(2);
-    h1PHGCERPGoodAdcTdcDiffTime[ipmt]->GetXaxis()->SetTitle("P.hgcer.goodAdcTdcDiffTime");
+    h1PHGCERPGoodAdcTdcDiffTime[ipmt]->GetXaxis()->SetTitle("H.cer.goodAdcTdcDiffTime");
     h1PHGCERPGoodAdcTdcDiffTime[ipmt]->GetYaxis()->SetTitle("Counts");
     h1goodTimeCal[ipmt]->Draw("same");
     h1goodTimeCal[ipmt]->SetLineColor(kRed);
