@@ -3,7 +3,7 @@ Here I have a code to produce AdcTDc time diff for Cerenkov and Calorimeter for 
 
 Code will basically produce the plots for no hit selection and hit selections .
 
-###code execution
+### code execution
 
 To run code we need to load ROOT files by doing root -l /path/ to/ rootfile/filename.root.
 
