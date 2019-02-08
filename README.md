@@ -5,7 +5,10 @@ Code will basically produce the plots for no hit selection and hit selections .
 
 ### code execution
 
-To run code we need to load ROOT files by doing root -l /path/ to/ rootfile/filename.root.
+To run code we need to load ROOT files by doing 
+
+root -l /path/ to/ rootfile/filename.root.
 
 and then do
+
 T->Process("S(H)HMSGates.C").
